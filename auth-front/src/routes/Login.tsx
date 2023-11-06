@@ -19,17 +19,17 @@ export default function Login(){
         e.preventDefault();
 
         try {
-            const response = await fetch(`${API_URL}/signup`, {
+            const response = await fetch(`${API_URL}/login`, {
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({name, username, password})
+                body: JSON.stringify({username, password})
             });
 
 
             if (response.ok) {
-                console.log("User created successfully");
+                console.log("Login successsfuly");
                 setErrorResponse("");
                 goTo("/")
             }else{
